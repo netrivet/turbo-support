@@ -1,0 +1,16 @@
+{
+  "name": "turbo-support",
+  "version": "1.0.0",
+  "description": "Turbo mode for the ProPhoto support site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "node-sass --output css sass",
+    "watch-sass": "npm run build-sass && node-sass --watch --recursive --output css sass"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^3.7.0"
+  }
+}
