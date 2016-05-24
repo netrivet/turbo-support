@@ -1,3 +1,5 @@
+$color-primary: #317FC2;
+
 .accordion-title {
   cursor: pointer;
   border-top: 1px solid #ddd;
@@ -5,20 +7,19 @@
   padding: 5px;
   margin: 0 !important;
   transition: all 200ms ease;
-}
 
-.accordion-title:hover:before, .accordion-title.open:before {
-  transform: rotate(90deg);
-}
-
-.accordion-title.open {
+&.open {
   margin-bottom: 10px !important;
   background: #317FC2;
   border-color: #317FC2;
   color: #fff;
+
+&:before {
+  color: #FFFFFF;
+}
 }
 
-.accordion-title:before {
+&:before {
   content: "\f054";
   display: inline-block;
   font-family: FontAwesome;
@@ -29,33 +30,65 @@
   transition: all 200ms ease;
 }
 
-.accordion-title.open:before {
-  color: #FFFFFF;
+&:hover, &.open {
+
+&:before {
+  transform: rotate(90deg);
+}
+}
+}
+
+.tutorial-breadcrumbs {
+    margin-top: 10px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #999999;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+
+    .breadcrumb_last {
+        color: #627C93;
+    }
+
+    a {
+        color: #999999;
+        text-decoration: none;
+        transition: all 200ms;
+
+    &:hover {
+        color: #627C93;
+    }
+    }
 }
 
 .list-pages-shortcode {
   margin: 0;
   padding: 0;
-}
 
-.list-pages-shortcode li {
-  margin: 10px 0;
-  padding: 0;
-  list-style: none;
-}
+    li {
+      margin: 10px 0;
+      padding: 0;
+      list-style: none;
 
-.list-pages-shortcode li a {
-  font-size: 18px  !important;
-  position: relative;
-}
+        a {
+          font-size: 18px  !important;
+          position: relative;
 
-.list-pages-shortcode li a:after {
-  content: "\f08e";
-  font-family: FontAwesome;
-  color: #DDD;
-  margin-left: 10px;
-  font-size: 14px;
-  position: absolute;
+        &:after {
+          content: "\f08e";
+          font-family: FontAwesome;
+          color: #DDD;
+          margin-left: 10px;
+          font-size: 14px;
+          position: absolute;
+          transition: all 200ms;
+        }
+
+        &:hover:after {
+            color: #627C93;
+        }
+        }
+    }
 }
 
 .animated-hamburger {
@@ -77,6 +110,18 @@
   position: relative;
   padding-left: 50px;
   border: 1px solid #DDDDDD;
+
+&.blurb-type-notice .blurb-icon {
+  color: #E2B732 !important;
+}
+
+&.blurb-type-info .blurb-icon {
+  color: #317fc2;
+}
+
+&.blurb-type-warning .blurb-icon {
+  color: #9D3131;
+}
 }
 
 .blurb-icon {
@@ -88,40 +133,26 @@
   line-height: 100% !important;
 }
 
-.blurb-type-notice .blurb-icon {
-  color: #E2B732 !important;
-}
-
-.blurb-type-info .blurb-icon {
-  color: #317fc2;
-}
-
-.blurb-type-warning .blurb-icon {
-  color: #9D3131;
-}
-
 .blurb-content, .blurb-content a {
   font-size: 14px !important;
 }
 
 /* for responsive YouTube embeds in video.php */
- .embed-container {
-     position: relative;
-     padding-bottom: 56.25%;
-     height: 0;
-     overflow: hidden;
-     max-width: 100%;
- }
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
 
- .embed-container iframe,
- .embed-container object,
- .embed-container embed {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
- }
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
 
 .hidden-span {
   display: none;
@@ -130,9 +161,9 @@
 .wp-video {
     margin-left: auto;
     margin-right: auto;
-}
 
-.wp-video .mejs-overlay-button {
-    -webkit-filter: brightness(35%);
-    filter: brightness(35%);
+    .mejs-overlay-button {
+        -webkit-filter: brightness(35%);
+        filter: brightness(35%);
+    }
 }
