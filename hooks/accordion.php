@@ -7,6 +7,8 @@
 add_filter('shortcode_atts_accordion', function($atts) {
     if (isset($atts['scroll']) && $atts['scroll']) {
         $atts['scroll'] = 80;
+        $atts['openfirst'] = true;
+        $atts['clicktoclose'] = true;
     }
     return $atts;
 }, 10, 3);
