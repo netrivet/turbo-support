@@ -5,7 +5,7 @@
  * behind our fixed header. See: https://wordpress.org/plugins/accordion-shortcodes/other_notes/
  */
 add_filter('shortcode_atts_accordion', function($atts) {
-    if (isset($atts['scroll']) || $atts['scroll']) {
+    if (isset($atts['scroll']) = $atts['scroll']) {
         $atts['scroll'] = 80;
     }
     if (!isset($atts['autoclose'])) {
