@@ -12,7 +12,7 @@ function set_accordion_shortcode_defaults($atts) {
     $atts['clicktoclose'] = true;
     
     return $atts;
-}
+};
 
 /**
  * Sets offset for scrolling accordion items to ensure they don't fall
@@ -21,9 +21,11 @@ function set_accordion_shortcode_defaults($atts) {
  */
 add_filter('shortcode_atts_accordion', function($atts) {
     
-    if ( !isset( $atts['scroll'] ) || 							// shortcode doesn't have 'scroll' or ...
-    	 ( isset( $atts['scroll'] ) && $atts['scroll'] ) ) {	// shortcode is set 'scroll=true' ...
+    if ( !isset( $atts['scroll'] ) ) { 							// shortcode doesn't have 'scroll' ...
     	$atts['scroll'] = 80;									// turn scroll ON with 80px of top offset
+    }
+    else if ( $atts['scroll'] ) {								// shortcode is set 'scroll=true' ...
+    	$atts['scroll'] = 80;									// override with 80px of top offset
     }															// setting 'scroll=false' will disable scroll
 
     return $atts;
