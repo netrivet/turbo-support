@@ -19,7 +19,7 @@ while ( have_posts() ) : the_post();
 	$ytid = get_post_meta( $post->ID, $key, true );
 
 	if ( is_single() && $ytid != null ) :
-		echo '<div id="int-vid-id-' . $post->ID . '" class="embed-container"><iframe src="https://www.youtube.com/embed/' . $ytid . '" frameborder="0" allowfullscreen></iframe></div>';
+		echo '<div id="int-vid-id-' . $post->ID . '" class="embed-container"><iframe src="https://www.youtube.com/embed/' . $ytid . '?rel=0" frameborder="0" allowfullscreen></iframe></div>';
 
 		echo '<div class="video-script script-id-' . $post->ID . '">' .
 			 the_content() .
