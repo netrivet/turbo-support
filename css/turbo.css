@@ -117,3 +117,7 @@
   .wp-video .mejs-overlay-button {
     -webkit-filter: brightness(35%);
     filter: brightness(35%); }
+
+#wp-admin-bar-support-wpsync .ab-icon::before {
+  content: '\f317';
+  top: 3px; }
