@@ -1,7 +1,5 @@
 <?php
 
-require_once plugin_dir_path(__DIR__).'classes/Process.php';
-
 /**
 * Add wpsync button to wp admin bar
 *
@@ -12,7 +10,7 @@ function addWpsyncButton($wp_admin_bar)
 	$args = array(
 		'id'	=> 'support-wpsync',
 		'title'	=> '<span class="ab-icon dashicons dashicons-upload"></span><span class="ab-label">'.__( 'WPSYNC', 'textdomain' ).'</span>',
-		'href'	=> '',
+		'href'	=> admin_url( 'tools.php?page=wpsync' ),
 		'meta'	=> array(
 			'target'	=> '_self',
 			'title'		=> __( 'Sync to production', 'textdomain' ),
@@ -42,12 +40,40 @@ function wpsync_ajax_load_scripts() {
 
 add_action('wp_ajax_wpsync_action', 'wpsync_ajax_handler');
 function wpsync_ajax_handler() {
-	// first check if data is being sent and that it is the data we want
-  	if ( isset( $_POST["post_var"] ) ) {
-		// now set our response var equal to that of the POST var (this will need to be sanitized based on what you're doing with with it)wpsync_action
-		$response = $_POST["post_var"];
-		// send the response back to the front end
-		echo $response;
-		wp_die();
+	check_ajax_referer( 'wpsync_nonce' );
+	$cmd = 'wpsync';
+	exec( $cmd, $retArr, $retVal );
+	if( $retVal == 0 ) {
+		$output = sprintf( "Success running command %s", $cmd );
+	} else {
+		$output = sprintf( "Failed to execute command %s".PHP_EOL."return code: %s", $cmd, $retVal );
 	}
+	if( $retArr ) {
+		$output .= PHP_EOL . sprintf( "%s results:", $cmd );
+		foreach( $retArr as $line ) {
+			$output .= PHP_EOL . $line;
+		}
+	}
+	echo $output;
+	wp_die();
+}
+
+add_action('admin_menu', 'wpsync_register_tools_submenu_page');
+function wpsync_register_tools_submenu_page() {
+	add_submenu_page( 
+		'tools.php',
+		'WP Sync',
+		'WPSYNC',
+		'edit_theme_options',
+		'wpsync',
+		'wpsync_tools_submenu_page_callback' 
+	);
+}
+
+function wpsync_tools_submenu_page_callback() {
+    echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
+    echo '<h2>WPSYNC Results</h2>';
+    echo '<p><button id="wpsync-go">Begin WPSYNC</button></p>';
+    echo '<div><textarea id="wpsync-results" style="width: 100%; height: 75vh;"></textarea></div>';
+    echo '</div>';
 }

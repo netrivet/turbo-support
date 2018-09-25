@@ -1,16 +1,21 @@
 jQuery(document).ready( function($) {
 
-	$("#wp-admin-bar-support-wpsync span").click( function(event) {
+	$('#wpsync-go').click( function(event) {
+		var $btn = $( this );
+		$btn.html( 'Running...' );
+		$btn.prop( 'disabled', true );
 		var data = {
 			_ajax_nonce: wpsync_ajax_obj.nonce,
 			action: 'wpsync_action',
-			post_var: 'this will be echoed back'
 		};
 
-		$.post(wpsync_ajax_obj.ajaxurl, data, function(response) {
-			alert(response);
+		$.post( wpsync_ajax_obj.ajaxurl, data, function(response) {
+			$('#wpsync-results').append(response);
+			var $btn = $('#wpsync-go');
+			$btn.html('Retry');
+			$btn.prop( 'disabled', false );
 		} );
 	 	return false;
-	});
+	} );
 
 });
