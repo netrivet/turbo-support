@@ -5,7 +5,7 @@ function setCookie(name, value, days) {
 }
 
 (function($) {
-  $('#turbo_search_version_selector').find('input').on('change', function(e) {
+  $('.turbo_search_version_selector').find('input').on('change', function(e) {
     if (!e.currentTarget.checked) {
       return;
     }

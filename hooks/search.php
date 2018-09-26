@@ -44,9 +44,12 @@ function turbo_relevanssi_page_search($posts, $query) {
  * Render the markup for a ProPhoto version selector
  */
 function turbo_search_version_selector() {
+    defined('DONOTCACHEPAGE') || define('DONOTCACHEPAGE', true);
     $cookiedVersion = isset($_COOKIE['pp_user_version']) && $_COOKIE['pp_user_version'] === '6' ? '6' : '7';
     $pluginRoot = dirname(__DIR__);
-    require_once $pluginRoot . '/views/version_selector.php';
+    ob_start();
+    require $pluginRoot . '/views/version_selector.php';
+    return ob_get_clean();
 }
 
 /**
@@ -57,9 +60,10 @@ function turbo_search_version_selector() {
  * @return WP_Query
  */
 function turbo_filter_post_version($wp) {
-    $cookiedVersion = isset($_COOKIE['pp_user_version']) && $_COOKIE['pp_user_version'] === '6' ? '6' : '7';
-    $catId = get_cat_ID("ProPhoto {$cookiedVersion}");
-    $wp->query_vars['category__in'] = [$catId];
+    // If they're cookied as a 6 user, exclude all 7 posts, and visa versa.
+    $versionToExclude = isset($_COOKIE['pp_user_version']) && $_COOKIE['pp_user_version'] === '6' ? '7' : '6';
+    $catId = get_cat_ID("ProPhoto {$versionToExclude}");
+    $wp->query_vars['category__not_in'] = [$catId];
     return $wp;
 }
 
