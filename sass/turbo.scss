@@ -167,3 +167,8 @@ $color-primary: #317FC2;
         filter: brightness(35%);
     }
 }
+
+#wp-admin-bar-support-wpsync .ab-icon::before {
+    content: '\f317';   // "Upload" dashicon
+    top: 3px;
+}
