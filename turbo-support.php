@@ -12,9 +12,5 @@ Version: 1.1.0
 Author URI: http://github.com/brianium
 */
 
-add_action('init','enter_turbo_mode');
-
-function enter_turbo_mode(){
-	// require hooks
-	require 'hooks/index.php';
-}
+// require hooks
+require 'hooks/index.php';
