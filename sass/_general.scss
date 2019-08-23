@@ -1,0 +1,172 @@
+.accordion-title {
+  cursor: pointer;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+  margin: 0 !important;
+  transition: all 200ms ease;
+
+&.open {
+  margin-bottom: 10px !important;
+  background: $color-primary;
+  border-color: $color-primary;
+  color: #fff;
+
+&:before {
+  color: #FFFFFF;
+}
+}
+
+&:before {
+  content: "\f054";
+  display: inline-block;
+  font-family: FontAwesome;
+  color: $color-primary;
+  font-size: 12px;
+  vertical-align: middle;
+  margin-right: 10px;
+  transition: all 200ms ease;
+}
+
+&:hover, &.open {
+
+&:before {
+  transform: rotate(90deg);
+}
+}
+}
+
+.tutorial-breadcrumbs {
+    margin-top: 10px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #999999;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+
+    .breadcrumb_last {
+        color: #627C93;
+    }
+
+    a {
+        color: #999999;
+        text-decoration: none;
+        transition: all 200ms;
+
+    &:hover {
+        color: #627C93;
+    }
+    }
+}
+
+.list-pages-shortcode {
+  margin: 0;
+  padding: 0;
+
+    li {
+      margin: 10px 0;
+      padding: 0;
+      list-style: none;
+
+        a {
+          font-size: 18px  !important;
+          position: relative;
+
+        &:after {
+          content: "\f08e";
+          font-family: FontAwesome;
+          color: #DDD;
+          margin-left: 10px;
+          font-size: 14px;
+          position: absolute;
+          transition: all 200ms;
+        }
+
+        &:hover:after {
+            color: #627C93;
+        }
+        }
+    }
+}
+
+.animated-hamburger {
+  background: none !important;
+  cursor: pointer;
+
+    span.meat,
+    span.meat:before,
+    span.meat:after {
+      background-color: #444444;
+    }
+}
+
+
+.blurb {
+  background: #f8f8f8;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 50px;
+  border: 1px solid #DDDDDD;
+
+&.blurb-type-notice .blurb-icon {
+  color: #E2B732 !important;
+}
+
+&.blurb-type-info .blurb-icon {
+  color: $color-primary;
+}
+
+&.blurb-type-warning .blurb-icon {
+  color: #9D3131;
+}
+}
+
+.blurb-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 30px !important;
+  line-height: 100% !important;
+}
+
+.blurb-content, .blurb-content a {
+  font-size: 14px !important;
+}
+
+/* for responsive YouTube embeds in video.php */
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+
+    iframe, object, embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.hidden-span {
+  display: none;
+}
+
+.wp-video {
+    margin-left: auto;
+    margin-right: auto;
+
+    .mejs-overlay-button {
+        -webkit-filter: brightness(35%);
+        filter: brightness(35%);
+    }
+}
+
+#wp-admin-bar-support-wpsync .ab-icon::before {
+    content: '\f317';   // "Upload" dashicon
+    top: 3px;
+}

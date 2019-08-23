@@ -79,7 +79,7 @@
   .blurb.blurb-type-notice .blurb-icon {
     color: #E2B732 !important; }
   .blurb.blurb-type-info .blurb-icon {
-    color: #317fc2; }
+    color: #317FC2; }
   .blurb.blurb-type-warning .blurb-icon {
     color: #9D3131; }
 
@@ -121,3 +121,225 @@
 #wp-admin-bar-support-wpsync .ab-icon::before {
   content: '\f317';
   top: 3px; }
+
+.woocommerce div.product div.summary {
+  float: none !important;
+  width: 100% !important; }
+
+.woocommerce div.product p.price {
+  color: #317FC2 !important; }
+
+.site-header-cart {
+  position: relative;
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0;
+  margin: 0; }
+
+.site-header-cart .cart-contents {
+  padding: 1.618em 0;
+  display: block;
+  position: relative;
+  background-color: transparent;
+  height: auto;
+  width: auto;
+  text-indent: 0; }
+
+.site-header-cart .cart-contents .amount {
+  margin-right: .327em; }
+
+.site-header-cart .cart-contents .count {
+  font-weight: 400;
+  opacity: .5;
+  font-size: .875em; }
+
+.site-header-cart .cart-contents span {
+  display: inline; }
+
+.widget_shopping_cart {
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 999999;
+  font-size: .875em;
+  left: -999em;
+  display: block; }
+  .widget_shopping_cart p.total {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .widget_shopping_cart .buttons a {
+    border: 0 !important;
+    background-color: #eee !important;
+    border-color: #eee !important;
+    color: #333 !important;
+    cursor: pointer !important;
+    padding: .8em 1.41575em !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    display: inline-block !important;
+    outline: 0 !important;
+    -webkit-appearance: none !important;
+    border-radius: 0 !important;
+    display: block !important;
+    margin-bottom: .8em !important; }
+    .widget_shopping_cart .buttons a:hover {
+      background-color: #d5d5d5 !important;
+      border-color: #d5d5d5 !important;
+      color: #333 !important; }
+    .widget_shopping_cart .buttons a.checkout {
+      background-color: #333 !important;
+      border-color: #333 !important;
+      color: #fff !important; }
+      .widget_shopping_cart .buttons a.checkout:hover {
+        background-color: #1a1a1a !important;
+        border-color: #1a1a1a !important;
+        color: #fff !important; }
+    .widget_shopping_cart .buttons a:last-child {
+      margin-bottom: 0; }
+  .widget_shopping_cart p.total {
+    border-top-style: solid !important;
+    border-top-width: 1px !important;
+    font-size: 120%; }
+  .widget_shopping_cart p.buttons {
+    margin-top: 0 !important; }
+  .widget_shopping_cart p.buttons,
+  .widget_shopping_cart p.total {
+    background-color: #f5f5f5;
+    margin: 0;
+    text-align: center; }
+  .widget_shopping_cart li,
+  .widget_shopping_cart p.buttons,
+  .widget_shopping_cart p.total {
+    padding: 1.3em 1.7em !important; }
+
+.site-header-cart.focus .widget_shopping_cart,
+.site-header-cart:hover .widget_shopping_cart {
+  left: 0;
+  display: block; }
+
+.product_list_widget {
+  list-style: none;
+  margin: 0; }
+  .product_list_widget li {
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+    .product_list_widget li::after, .product_list_widget li::before {
+      content: '';
+      display: table; }
+    .product_list_widget li::after {
+      clear: both; }
+    .product_list_widget li:last-child {
+      border-bottom: none; }
+    .product_list_widget li img {
+      display: none !important; }
+    .product_list_widget li a.remove {
+      position: relative !important;
+      float: left !important;
+      top: auto !important;
+      width: 1.618em !important;
+      height: 1.618em !important;
+      line-height: 1.618 !important;
+      font-weight: 400 !important;
+      text-indent: -9999px !important; }
+      .product_list_widget li a.remove::before {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1;
+        vertical-align: -.125em;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        line-height: inherit;
+        vertical-align: baseline;
+        content: "\f057";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #e2401c;
+        line-height: 1.618;
+        text-indent: 0;
+        text-align: left; }
+      .product_list_widget li a.remove:hover {
+        background: none !important; }
+    .product_list_widget li dl {
+      padding: 0 !important;
+      border-left: none !important;
+      margin: 1.5em 0 !important; }
+    .product_list_widget li dt {
+      padding: 0 !important;
+      margin: 0 0 0.2em !important;
+      line-height: 1em !important;
+      float: none !important;
+      display: block !important;
+      font-size: 90%; }
+    .product_list_widget li dd {
+      padding: 0 !important;
+      margin: 0 0 1.8em !important;
+      display: block !important;
+      float: none !important;
+      text-transform: none; }
+
+.cart-contents:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  vertical-align: -.125em;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  line-height: inherit;
+  vertical-align: baseline;
+  content: "\f07a";
+  height: 1em;
+  float: right;
+  font-size: 18px;
+  color: #4e5865; }
+
+.woocommerce-message {
+  border-top-color: #317FC2 !important; }
+  .woocommerce-message::before {
+    color: #317FC2 !important; }
+  .woocommerce-message a.button {
+    color: #333 !important; }
+
+.wc-bookings-booking-form-button {
+  background-color: #317FC2 !important; }
+  .wc-bookings-booking-form-button.disabled {
+    background-color: #4e5865 !important; }
+
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable a {
+  background-color: #317FC2 !important; }
+
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable-range .ui-state-active {
+  background-color: #276499 !important; }
+
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.fully_booked a, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.fully_booked span {
+  background-color: #317FC2 !important; }
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+  background-color: #317FC2 !important;
+  font-size: 18px !important;
+  color: #fff !important; }
+
+#place_order {
+  background-color: #317FC2 !important; }
+
+form.woocommerce-checkout input,
+form.woocommerce-checkout textarea,
+form.woocommerce-checkout .select2-container--default .select2-selection--single {
+  font-size: 13px !important;
+  background: #fafafa !important;
+  border: 1px solid #aaa !important; }
+
+form.woocommerce-checkout input,
+form.woocommerce-checkout textarea {
+  padding: 0.4em 0.6em !important; }
