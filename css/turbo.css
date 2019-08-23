@@ -322,6 +322,9 @@
 #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.bookable-range .ui-state-active {
   background-color: #276499 !important; }
 
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.fully_booked a, #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td.fully_booked span {
+  background-color: #317FC2 !important; }
+
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
   background-color: #317FC2 !important;
   font-size: 18px !important;

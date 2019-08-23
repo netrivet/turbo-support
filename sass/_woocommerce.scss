@@ -269,6 +269,11 @@
           background-color: darken($color-primary, 10) !important;
         }
       }
+      td.fully_booked {
+        a, span {
+          background-color: $color-primary !important;
+        }
+      }
     }
   }
 }

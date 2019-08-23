@@ -11,6 +11,9 @@ function format_single_product_page() {
 }
 
 function pp_woo_cart() {
+    if (WC()->cart->get_cart_contents_count() == 0) {
+        return '';
+    }
     $pluginRoot = dirname(__DIR__);
     ob_start();
     require $pluginRoot . '/views/woo_cart.php';
