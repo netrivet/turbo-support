@@ -306,3 +306,22 @@ form.woocommerce-checkout {
     padding: 0.4em 0.6em !important;
   }
 }
+
+.woocommerce {
+  .product_meta {
+    display: none;
+  }
+
+  div.product {
+    div.images {
+      float: none !important;
+      width: 100% !important;
+    }
+  }
+}
+
+.woocommerce-cart-form {
+  td.actions {
+    display: none;
+  }
+}

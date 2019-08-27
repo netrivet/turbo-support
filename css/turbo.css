@@ -343,3 +343,13 @@ form.woocommerce-checkout .select2-container--default .select2-selection--single
 form.woocommerce-checkout input,
 form.woocommerce-checkout textarea {
   padding: 0.4em 0.6em !important; }
+
+.woocommerce .product_meta {
+  display: none; }
+
+.woocommerce div.product div.images {
+  float: none !important;
+  width: 100% !important; }
+
+.woocommerce-cart-form td.actions {
+  display: none; }
